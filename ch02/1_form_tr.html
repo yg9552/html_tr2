@@ -11,8 +11,17 @@
 		}
 		
 		td, th {
-			
 			padding: 15px;
+		}
+		th {
+			background-color: #444444;
+			color: white;
+		}
+		span {
+			color: #a8324c;
+		}
+		.black{
+			color: black;
 		}
 	</style>
 </head>
@@ -98,8 +107,173 @@
 				<span>연락처는 둘 중 하나만 입력해도 됩니다.</span>
 			</td>
 		</tr>
+		<tr>
+			<th>우편번호</th>
+			<td>
+				<form action="" id="">
+					<input type="text" name="adn">
+					<input type="button" value="주소검색">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>주소</th>
+			<td>
+				<form action="" id="">
+					<textarea cols="100" rows="1"></textarea><br>
+					<input type="text" name="ad">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>정보수신여부</th>
+			<td>
+				<form action="" id="">
+					<span class="black">서비스 및 이벤트 소식을</span>
+					<input type="checkbox" name="emal">Email로 수신하겠습니다.
+					<input type="checkbox" name="SMS">SMS로 수신하겠습니다.
+				</form>
+			</td>
+		</tr>
 	</table>
-
-
+	
+	<h3>작가정보</h2>
+	<table>
+		<tr>
+			<th>프로필이미지</th>
+			<td>
+				<form action="" id="">
+					<input type="button" value="파일선택">
+					<span class="black">선택된 파일 없음</span>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>필명</th>
+			<td>
+				<form action="" id="">
+					<input type="text" name="wrtname">
+					<span>필명이 없으신 분들은 실명을 등록해주시기 바랍니다.(작가정보에 노출 될 이름 입니다.)</span>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>대표작</th>
+			<td>
+				<form action="" id="">
+					<input type="text" name="prod">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>수상내역</th>
+			<td>
+				<form action="" id="">
+					<textarea cols="90" rows="40"></textarea><br>
+					<span>여러 수상내역을 등록 시 콤마<sub>(,)</sub>로 구분하여 등록해 주시기 바랍니다.</span>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>주요작품</th>
+			<td>
+				<form action="" id="">
+					<input type="text" name="mainprod" placeholder="스토리 제목을 입력하세요">
+					<input type="text" name="mainprod" placeholder="해당 스토리의 역할을 입력하세요">
+					<input type="button" value="삭제"><br>
+					<input type="button" value="+추가"><br>
+					<span>
+						본인 참여 주요작품의 제목 및 역할에 대해 등록해 주시기 바랍니다.<br>
+						( 역할은 메인작가, 공동작가, 보조작가, 각색, 각복 등 본인 역할을 정확히 기재해 주시기 바랍니다.)
+					</span>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>작가정보공개설정</th>
+			<td>
+				<form action="" id="">
+					<input type="radio" name="open">공개
+					<input type="radio" name="open">비공개
+				</form>
+			</td>
+		</tr>
+	</table>
+	<form action="" id="">
+		<input type="button" value="저장">
+		<input type="button" value="취소">
+	</form>
+	<h3>스토리 이용자 정보 입력</h3>
+	<table>
+		<tr>
+			<th>소속(회사)</th>
+			<td>
+				<form action="" id="">
+					<input type="text" name="comp">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>사업자등록번호</th>
+			<td>
+				<form action="" id="">
+					<input type="text" name="cn">-<input type="text" name="cn">-<input type="text" name="cn">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>사업자등록증(첨부)</th>
+			<td>
+				<form action="" id="">
+					<input type="button" value="파일 선택"><span class="black">선택된 파일 없음</span><br>
+					<span>소속(회사)의 사업자등록증을 업로드해주시기바랍니다.(이미지 파일만 업로드 가능/PDF파일 업로드 불가)</span>
+				</form>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<table>
+		<tr>
+			<th>분야</th>
+			<td>
+				<form action="" id="">
+					<input type="checkbox" name="">영화
+					<input type="checkbox" name="">방송
+					<input type="checkbox" name="">출판
+					<input type="checkbox" name="">공연/예술
+					<input type="checkbox" name="">투자/배급
+					<input type="checkbox" name="">캐릭터(애니메이션)
+					<input type="checkbox" name="">기타<input type="text" name="other">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>직종</th>
+			<td>
+				<form action="" id="">
+					<input type="checkbox" name="">제작자
+					<input type="checkbox" name="">투자자
+					<input type="checkbox" name="">에이전트
+					<input type="checkbox" name="">기타<input type="text" name="other">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>주요경력</th>
+			<td>
+				<span class="black">주요경력사항을 등록해 주시기 바랍니다.</span><br>
+				<span>( 기간, 사업내용, 담당업무를 입력해 주시기 바랍니다.)</span>
+				<form action="" id="">
+					<input type="date">~
+					<input type="date">
+					<input type="text" name="" placeholder="사업내용을 입력해주세요">
+					<input type="text" name="" placeholder="담당업무를 입력해주세요">
+					<input type="button" value="삭제"><br>
+					<input type="button" value="추가">
+				</form>
+			</td>
+		</tr>
+	</table>
+	<input type="button" value="회원가입 바로가기">
 </body>
 </html>

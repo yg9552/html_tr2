@@ -13,7 +13,7 @@
 			padding: 15px;
 		}
 		th {
-			background-color: #444444;
+			background-color:#04AA6D;
 			color: white;
 			width: 150px;
 		}
@@ -31,6 +31,10 @@
 			padding:0;
 			float: right;
 			font-size: 13px;
+		}
+		input[type=button], input[type=submit], input[type=reset] {
+			cursor: pointer;
+			border: 2px solid;
 		}
 	</style>
 </head>
@@ -89,6 +93,7 @@
 						<option value="google">google
 						<option value="kakao">kakao
 						<option value="nate">nate
+						<option value="직접입력">직접입력
 					</select>
 					<input type="button" name="checkemail" value="인증코드발송"><br>
 					<input type="text" name="code" placeholder="인증코드">

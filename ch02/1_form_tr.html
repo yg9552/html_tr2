@@ -29,7 +29,8 @@
 	</style>
 </head>
 <body>
-	<h3>기본정보</h2>
+	
+	<h3>기본정보</h3>
 	<table>
 		<tr>
 			<th>이름</th>
@@ -150,13 +151,13 @@
 		</tr>
 	</table>
 	
-	<h3>작가정보</h2>
+	<h3>작가정보</h3>
 	<table>
 		<tr>
 			<th>프로필이미지</th>
 			<td>
 				<form action="" id="">
-					<input type="file">
+					<input type="file" name="file" multiple="multiple">
 					<!-- <input type="button" value="파일선택">
 					<span class="black">선택된 파일 없음</span> -->
 				</form>
@@ -241,7 +242,7 @@
 			<th>사업자등록증(첨부)</th>
 			<td>
 				<form action="" id="">
-					<input type="file"><br>
+					<input type="file" name="file2" multiple="multiple"><br>
 					<!-- <input type="button" value="파일 선택"><span class="black">선택된 파일 없음</span><br> -->
 					<span>소속(회사)의 사업자등록증을 업로드해주시기바랍니다.(이미지 파일만 업로드 가능/PDF파일 업로드 불가)</span>
 				</form>
@@ -254,13 +255,13 @@
 			<th>분야</th>
 			<td>
 				<form action="" id="">
-					<input type="checkbox" name="">영화
-					<input type="checkbox" name="">방송
-					<input type="checkbox" name="">출판
-					<input type="checkbox" name="">공연/예술
-					<input type="checkbox" name="">투자/배급
-					<input type="checkbox" name="">캐릭터(애니메이션)
-					<input type="checkbox" name="">기타<input type="text" name="other">
+					<input type="checkbox" name="h">영화
+					<input type="checkbox" name="t">방송
+					<input type="checkbox" name="v">출판
+					<input type="checkbox" name="r">공연/예술
+					<input type="checkbox" name="q">투자/배급
+					<input type="checkbox" name="c">캐릭터(애니메이션)
+					<input type="checkbox" name="extra">기타<input type="text" name="other">
 				</form>
 			</td>
 		</tr>
@@ -268,10 +269,10 @@
 			<th>직종</th>
 			<td>
 				<form action="" id="">
-					<input type="checkbox" name="">제작자
-					<input type="checkbox" name="">투자자
-					<input type="checkbox" name="">에이전트
-					<input type="checkbox" name="">기타<input type="text" name="other">
+					<input type="checkbox" name="w">제작자
+					<input type="checkbox" name="x">투자자
+					<input type="checkbox" name="d">에이전트
+					<input type="checkbox" name="extra2">기타<input type="text" name="other">
 				</form>
 			</td>
 		</tr>
@@ -281,10 +282,10 @@
 				<span class="black">주요경력사항을 등록해 주시기 바랍니다.</span><br>
 				<span>( 기간, 사업내용, 담당업무를 입력해 주시기 바랍니다.)</span>
 				<form action="" id="">
-					<input type="date">~
-					<input type="date">
-					<input type="text" name="" placeholder="사업내용을 입력해주세요" size="25">
-					<input type="text" name="" placeholder="담당업무를 입력해주세요" size="25">
+					<input type="date" name="date">~
+					<input type="date" name="date">
+					<input type="text" name="work" placeholder="사업내용을 입력해주세요" size="25">
+					<input type="text" name="wrok" placeholder="담당업무를 입력해주세요" size="25">
 					<input type="button" value="삭제"><br>
 					<input type="button" value="추가">
 				</form>
@@ -292,6 +293,8 @@
 		</tr>
 	</table>
 	<br>
-	<input type="button" value="회원가입 바로가기">
+	<input type="submit" value="회원가입 바로가기">
+	
+	
 </body>
 </html>

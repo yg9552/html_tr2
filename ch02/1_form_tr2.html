@@ -30,7 +30,7 @@
 </head>
 <body>
 	
-	<form action="result.html" id="form_tr2">
+	<form action="result.html" id="form_tr2" autocomplete="off">
 		<h3>기본정보</h3>
 		<table>
 			<tr>
@@ -82,6 +82,9 @@
 						<option value="kakao">kakao
 						<option value="nate">nate
 					</select>
+					<input type="button" name="checkemail" value="인증코드발송"><br>
+					<input type="text" name="code" placeholder="인증코드">
+					<input type="button" name="codesub" value="인증확인">
 				</td>
 			</tr>
 			<tr>
@@ -94,7 +97,7 @@
 						<option value="017">017
 					</select>
 					-
-					<input type="text" name="phn">-<input type="text" name="phn">
+					<input type="text" name="phn" size="15">-<input type="text" name="phn" size="15">
 					<br>
 					<span class="black">일반전화</span>
 					<select name="phn">
@@ -103,7 +106,7 @@
 						<option value="017">017
 					</select>
 					-
-					<input type="text" name="phn">-<input type="text" name="phn"><br>
+					<input type="text" name="phn" size="15">-<input type="text" name="phn" size="15"><br>
 					<span>연락처는 둘 중 하나만 입력해도 됩니다.</span>
 				</td>
 			</tr>

@@ -16,12 +16,16 @@
 		th {
 			background-color: #444444;
 			color: white;
+			width: 150px;
 		}
 		span {
 			color: #a8324c;
 		}
 		.black{
 			color: black;
+		}
+		td {
+			width: 842px;
 		}
 	</style>
 </head>
@@ -85,7 +89,7 @@
 			<th>연락처</th>
 			<td>
 				<form action="" id="">
-					<span>휴대전화</span>
+					<span class="black">휴대전화</span>
 					<select name="phn">
 						<option value="010">010
 						<option value="011">011
@@ -95,7 +99,7 @@
 					<input type="text" name="phn">-<input type="text" name="phn">
 				</form>
 				<form action="" id="">
-					<span>일반전화</span>
+					<span class="black">일반전화</span>
 					<select name="phn">
 						<option value="010">010
 						<option value="011">011
@@ -120,7 +124,7 @@
 			<th>주소</th>
 			<td>
 				<form action="" id="">
-					<textarea cols="100" rows="1"></textarea><br>
+					<input type="text" name="ad" size="115"><br>
 					<input type="text" name="ad">
 				</form>
 			</td>
@@ -161,7 +165,7 @@
 			<th>대표작</th>
 			<td>
 				<form action="" id="">
-					<input type="text" name="prod">
+					<input type="text" name="prod" size="115">
 				</form>
 			</td>
 		</tr>
@@ -169,7 +173,7 @@
 			<th>수상내역</th>
 			<td>
 				<form action="" id="">
-					<textarea cols="90" rows="40"></textarea><br>
+					<textarea cols="117" rows="40"></textarea><br>
 					<span>여러 수상내역을 등록 시 콤마<sub>(,)</sub>로 구분하여 등록해 주시기 바랍니다.</span>
 				</form>
 			</td>
@@ -178,8 +182,8 @@
 			<th>주요작품</th>
 			<td>
 				<form action="" id="">
-					<input type="text" name="mainprod" placeholder="스토리 제목을 입력하세요">
-					<input type="text" name="mainprod" placeholder="해당 스토리의 역할을 입력하세요">
+					<input type="text" name="mainprod" placeholder="스토리 제목을 입력하세요" size="50">
+					<input type="text" name="mainprod" placeholder="해당 스토리의 역할을 입력하세요" size="50">
 					<input type="button" value="삭제"><br>
 					<input type="button" value="+추가"><br>
 					<span>
@@ -199,10 +203,12 @@
 			</td>
 		</tr>
 	</table>
+	<br>
 	<form action="" id="">
 		<input type="button" value="저장">
 		<input type="button" value="취소">
 	</form>
+	
 	<h3>스토리 이용자 정보 입력</h3>
 	<table>
 		<tr>
@@ -217,7 +223,7 @@
 			<th>사업자등록번호</th>
 			<td>
 				<form action="" id="">
-					<input type="text" name="cn">-<input type="text" name="cn">-<input type="text" name="cn">
+					<input type="text" name="cn" size="10">-<input type="text" name="cn" size="5">-<input type="text" name="cn" size="10">
 				</form>
 			</td>
 		</tr>
@@ -266,14 +272,15 @@
 				<form action="" id="">
 					<input type="date">~
 					<input type="date">
-					<input type="text" name="" placeholder="사업내용을 입력해주세요">
-					<input type="text" name="" placeholder="담당업무를 입력해주세요">
+					<input type="text" name="" placeholder="사업내용을 입력해주세요" size="25">
+					<input type="text" name="" placeholder="담당업무를 입력해주세요" size="25">
 					<input type="button" value="삭제"><br>
 					<input type="button" value="추가">
 				</form>
 			</td>
 		</tr>
 	</table>
+	<br>
 	<input type="button" value="회원가입 바로가기">
 </body>
 </html>

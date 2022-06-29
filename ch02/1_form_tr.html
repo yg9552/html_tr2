@@ -9,7 +9,6 @@
 			border: 1px solid black;
 			border-collapse: collapse;
 		}
-		
 		td, th {
 			padding: 15px;
 		}
@@ -67,6 +66,16 @@
 			<td>
 				<form action="" id="">
 					<input type="password" name="password">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<th>생년월일</th>
+			<td>
+				<form>
+					<input type="date">
+					<input type="radio" name="gender">남자
+					<input type="radio" name="gender">여자
 				</form>
 			</td>
 		</tr>
@@ -147,8 +156,9 @@
 			<th>프로필이미지</th>
 			<td>
 				<form action="" id="">
-					<input type="button" value="파일선택">
-					<span class="black">선택된 파일 없음</span>
+					<input type="file">
+					<!-- <input type="button" value="파일선택">
+					<span class="black">선택된 파일 없음</span> -->
 				</form>
 			</td>
 		</tr>
@@ -156,7 +166,7 @@
 			<th>필명</th>
 			<td>
 				<form action="" id="">
-					<input type="text" name="wrtname">
+					<input type="text" name="wrtname"><br>
 					<span>필명이 없으신 분들은 실명을 등록해주시기 바랍니다.(작가정보에 노출 될 이름 입니다.)</span>
 				</form>
 			</td>
@@ -231,7 +241,8 @@
 			<th>사업자등록증(첨부)</th>
 			<td>
 				<form action="" id="">
-					<input type="button" value="파일 선택"><span class="black">선택된 파일 없음</span><br>
+					<input type="file"><br>
+					<!-- <input type="button" value="파일 선택"><span class="black">선택된 파일 없음</span><br> -->
 					<span>소속(회사)의 사업자등록증을 업로드해주시기바랍니다.(이미지 파일만 업로드 가능/PDF파일 업로드 불가)</span>
 				</form>
 			</td>

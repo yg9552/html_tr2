@@ -5,6 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>selector</title>
 	<style>
+		html {
+			color: red;
+			font-size: 10px;
+		}
 		h1 {
 			margin: 0;
 			padding: 0;
@@ -12,6 +16,12 @@
 		}
 		ul>li>ul>li {
 			font-size: 20px;
+		}
+		ul>li>ul>li>ol>li{
+			font-size: 30px;
+		}
+		#aaa, .bbb {
+			font-size: 40px;
 		}
 	</style>
 </head>
@@ -21,7 +31,14 @@
 	<ul>
 		<li>a
 			<ul>
-				<li>1</li>
+				<li>1
+					<ol>
+						<li>A</li>
+						<li>B</li>
+						<li>C</li>
+						<li>D</li>
+					</ol>
+				</li>
 				<li>2</li>
 				<li>3</li>
 				<li>4</li>
@@ -53,5 +70,7 @@
 		</li>
 	</ul>
 
+	<p id="aaa">폭우로 수위 급상승…동부간선도로 전 구간 다시 통제</p>
+	<p class="bbb">폭우로 수위 급상승…동부간선도로 전 구간 다시 통제</p>
 </body>
 </html>

@@ -263,7 +263,13 @@
 			</tr>
 		</table>
 		<br>
-		<input type="submit" value="회원가입">
+		<input type="submit" value="회원가입" onclick="here()";>
 	</form>
+	<script type="text/javascript">
+		function here() {
+			alert("회원가입이완료되었습니다");
+			document.getElementById("form_tr2").submit();
+		}
+		</script>
 </body>
 </html>

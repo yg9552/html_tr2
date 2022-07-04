@@ -1,0 +1,34 @@
+* {
+	border: none;
+}
+h1 {
+	text-align: center;
+}
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	padding: 15px;
+}
+table {
+	width: 100%;
+}
+th {
+	width: 300px;
+	background-color: #4b4b4b;
+	color: white;
+}
+.pic {
+	width: 200px;
+}
+.eletext {
+	font-weight: bold;
+	width: 100px;
+	background-color: #4b4b4b;
+	color: white;
+}
+input {
+	height: 30px;
+	width: 300px;
+	text-align: center;
+}

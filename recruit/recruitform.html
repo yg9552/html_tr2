@@ -189,8 +189,14 @@
 			</tr>
 		</table>
 		<br>
-		<div><input type="submit" value="제출"></div>
+		<div><input type="submit" value="제출" onclick="here()";></div>
 		
 	</form>
+	<script type="text/javascript">
+		function here() {
+			alert("제출되었습니다");
+			document.getElementById("form1").submit();
+		}
+	</script>
 </body>
 </html>

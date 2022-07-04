@@ -37,7 +37,7 @@ input[type=date] {
 	border: 1px solid black;
 	border-radius: 10px;
 }
-input[type=submit] {
+input[type=submit], .mod {
 	border: 1px solid black;
 	width: 100px;
 	height: 50px;

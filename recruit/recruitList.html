@@ -61,11 +61,21 @@
 		</table>
 		<br>
 		<div class="button">
-			<input type="button" value="삭제">
+			<input type="button" value="삭제" onclick="here()";>
 			<input type="button" value="보류">
 			<input type="button" value="출력">
 		</div>
 	</form>
-
+	<script>
+	function here() {
+	  var txt;
+	  if (confirm("삭제하시겠습니까?")) {
+	    txt = "You pressed OK!";
+	  } else {
+	    txt = "You pressed Cancel!";
+	  }
+	  document.getElementById("demo").innerHTML = txt;
+	}
+	</script>
 </body>
 </html>

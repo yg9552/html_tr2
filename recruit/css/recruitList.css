@@ -1,23 +1,29 @@
 h1 {
 	text-align: center;
 }
-div {
+#sear {
 	float: right;
+	margin-bottom: 15px;
+	background-color: #f5f5f5;
+	margin-right: 10px;
 }
 .sear {
-	display: inline-block;
 	width: 50px;
-	height: 50px;
+	height: 20px;
+	margin: 0 5px;
 }
 input[type=search] {
 	border: none;
 	border-bottom: 1px solid black;
-	width: 500px;
+	width: 300px;
+	background-color: #f5f5f5;
 }
 a {
 	width: 25px;
 	height: 25px;
 	text-decoration: none;
+	vertical-align: middle;
+	color: black;
 }
 table, th, td {
 	border: none;
@@ -29,8 +35,8 @@ table {
 	width: 100%;
 }
 th {
-	background-color: yellow;
-	color: black;
+	background-color: #9dc4ae;
+	color: white;
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;
 }
@@ -47,7 +53,11 @@ th:last-child {
 input[type=button] {
 	width: 50px;
 	height: 30px;
-	background-color: yellow;
+	background-color: #9dc4ae;
 	border: none;
 	cursor: pointer;
+	color: white;
+}
+.button {
+	float: right;
 }

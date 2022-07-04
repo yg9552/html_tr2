@@ -1,0 +1,53 @@
+h1 {
+	text-align: center;
+}
+div {
+	float: right;
+}
+.sear {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+}
+input[type=search] {
+	border: none;
+	border-bottom: 1px solid black;
+	width: 500px;
+}
+a {
+	width: 25px;
+	height: 25px;
+	text-decoration: none;
+}
+table, th, td {
+	border: none;
+	border-collapse: collapse;
+	text-align: center;
+	padding: 15px;
+}
+table {
+	width: 100%;
+}
+th {
+	background-color: yellow;
+	color: black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+td {
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+td:last-child {
+	border-right: none;
+}
+th:last-child {
+	border-right: none;
+}
+input[type=button] {
+	width: 50px;
+	height: 30px;
+	background-color: yellow;
+	border: none;
+	cursor: pointer;
+}

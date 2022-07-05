@@ -30,13 +30,13 @@ th {
 }
 input {
 	height: 30px;
-	width: 300px;
+	width: 400px;
 	text-align: center;
 }
-input[type=date] {
+/* input[type=date] {
 	border: 1px solid black;
 	border-radius: 10px;
-}
+} */
 input[type=submit], .mod, input[type=reset] {
 	border: 1px solid black;
 	width: 100px;

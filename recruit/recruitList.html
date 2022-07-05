@@ -87,13 +87,12 @@
 	</form>
 	<script>
 	function here() {
-	  var txt;
 	  if (confirm("삭제하시겠습니까?")) {
 	    txt = "You pressed OK!";
 	  } else {
 	    txt = "You pressed Cancel!";
 	  }
-	  document.getElementById("form3").innerHTML = txt;
+	  document.getElementById("form3")=txt;
 	}
 	</script>
 </body>

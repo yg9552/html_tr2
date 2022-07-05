@@ -3,12 +3,219 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>recruitReg</title>
+	<link rel="stylesheet" href="./css/recruitform.css">
+	<title>recruit</title>
 	<style></style>
 </head>
 <body>
+	<h1>입사지원서</h1>
+	<form action="./recruitList.html" id="form1">
+		<table>
+			<tr>
+				<th>지원분야</th>
+				<td><input type="text" name="area"></td>
+				<th>경력구분</th>
+				<td><input type="text" name="carr"></td>
+				<th>희망연봉</th>
+				<td><input type="text" name="money"></td>
+			</tr>
+		</table>
+		<h3>□ 기본정보</h3>
+		<table>
+			<tr>
+				<td class="pic" rowspan="6"><input type="file" id="image" accept="image/*" onchange="setThumbnail(event);"/><div id="image_container"></div></td>
+				<td class="eletext">성명</td>
+				<td><input type="text" name="name"></td>
+				<td class="eletext">한문</td>
+				<td><input type="text" name="chi"></td>
+			</tr>
+			<tr>
+				<!-- <td></td> -->
+				<td class="eletext">영문</td>
+				<td><input type="text" name="en"></td>
+				<td class="eletext">생년월일</td>
+				<td><input type="date" name="birth"></td>
+			</tr>
+			<tr>
+				<!-- <td></td> -->
+				<td class="eletext">전화번호</td>
+				<td><input type="text" name="ph"></td>
+				<td class="eletext">비상연락망</td>
+				<td><input type="text" name="sosph"></td>
+			</tr>
+			<tr>
+				<!-- <td></td> -->
+				<td class="eletext">전자우편</td>
+				<td><input type="text" name="eamil"></td>
+				<td class="eletext">나이</td>
+				<td><input type="text" name="years"></td>
+			</tr>
+			<tr>
+				<!-- <td></td> -->
+				<td class="eletext">주소</td>
+				<td colspan="3""><input type="text" name="addres"></td>
+				<!-- <td></td>
+				<td></td> -->
+			</tr>
+			<tr>
+				<!-- <td></td> -->
+				<td class="eletext">취미생활</td>
+				<td colspan="3""><input type="text" name="addres"></td>
+				<!-- <td></td>
+				<td></td> -->
+			</tr>
+		</table>
+		
+		<h3>□ 학력사항(최신이력이 가장 위로)</h3>
+		<table>
+			<tr>
+				<th>기간</th>
+				<th>출신학교</th>
+				<th>구분</th>
+				<th>학과</th>
+				<th>소재지</th>
+			</tr>
+			<tr>
+				<td>
+					<input type="date" name="periodst">~
+					<input type="date" name="perioded">
+				</td>
+				<td><input type="text" name="school"></td>
+				<td><input type="text" name="divi"></td>
+				<td><input type="text" name="class"></td>
+				<td><input type="text" name="where"></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="date" name="periodst2">~
+					<input type="date" name="perioded2">
+				</td>
+				<td><input type="text" name="school2"></td>
+				<td><input type="text" name="divi2"></td>
+				<td><input type="text" name="class2"></td>
+				<td><input type="text" name="where2"></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="date" name="periodst3">~
+					<input type="date" name="perioded3">
+				</td>
+				<td><input type="text" name="school3"></td>
+				<td><input type="text" name="divi3"></td>
+				<td><input type="text" name="class3"></td>
+				<td><input type="text" name="where3"></td>
+			</tr>
+		</table>
+		
+		<h3>□ 교육연수</h3>
+		<table>
+			<tr>
+				<th>연수기간</th>
+				<th>연수기관</th>
+				<th>연수과정 및 내용</th>
+			</tr>
+			<tr>
+				<td>
+					<input type="date" name="trperiodst">~
+					<input type="date" name="trperioded">
+				</td>
+				<td><input type="text" name="trplace"></td>
+				<td><input type="text" name="trcont"></td>
+			</tr>
+		</table>
+		
+		<h3>□ 자격사항</h3>
+		<table>
+			<tr>
+				<th>취득일</th>
+				<th>종류 및 등급</th>
+				<th>발행처</th>
+				<th>보유기술 및 수준</th>
+			</tr>
+			<tr>
+				<td><input type="date" name="getdate"></td>
+				<td><input type="text" name="kind"></td>
+				<td><input type="text" name="publi"></td>
+				<td><input type="text" name="level"></td>
+			</tr>
+			<tr>
+				<td><input type="date" name="getdate2"></td>
+				<td><input type="text" name="kind2"></td>
+				<td><input type="text" name="publi2"></td>
+				<td><input type="text" name="level2"></td>
+			</tr>
+			<tr>
+				<td><input type="date" name="getdate2"></td>
+				<td><input type="text" name="kind2"></td>
+				<td><input type="text" name="publi2"></td>
+				<td><input type="text" name="level2"></td>
+			</tr>
+		</table>
+		
+		<h3>□ 경력사항</h3>
+		<table>
+			<tr>
+				<th>활동기간</th>
+				<th>기관</th>
+				<th>담당업무</th>
+				<th>경험 및 습득역량</th>
+			</tr>
+			<tr>
+				<td>
+					<input type="date" name="carrst">~
+					<input type="date" name="carred">
+				</td>
+				<td><input type="text" name="orga"></td>
+				<td><input type="text" name="work"></td>
+				<td><input type="text" name="exget"></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="date" name="carrst2">~
+					<input type="date" name="carred2">
+				</td>
+				<td><input type="text" name="orga2"></td>
+				<td><input type="text" name="work2"></td>
+				<td><input type="text" name="exget2"></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="date" name="carrst3">~
+					<input type="date" name="carred3">
+				</td>
+				<td><input type="text" name="orga3"></td>
+				<td><input type="text" name="work3"></td>
+				<td><input type="text" name="exget3"></td>
+			</tr>
+		</table>
+		<br>
+		<input type="submit" value="제출" onclick="here()";>
+		<input type="reset" id="on" onmouseover="mouseon()" onmouseout="mouseout()">
+		
+	</form>
+	<script type="text/javascript">
+		function here() {
+			alert("제출되었습니다");
+			document.getElementById("form1").submit();
+		}
+		function mouseon() {
+			on.style.color="red";
+		}
+		function mouseout() {
+			on.style.color="white";
+		}
+		
+		function setThumbnail(event) {
+	        var reader = new FileReader();
 
+	        reader.onload = function(event) {
+	          var img = document.createElement("img");
+	          img.setAttribute("src", event.target.result);
+	          document.querySelector("div#image_container").appendChild(img);
+	        };
 
-
+	        reader.readAsDataURL(event.target.files[0]);
+	      }
+	</script>
 </body>
 </html>

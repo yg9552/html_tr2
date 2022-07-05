@@ -21,6 +21,11 @@ th {
 }
 .pic {
 	width: 200px;
+	height: 400px;
+}
+img {
+	width: 340px;
+	height: 420px;
 }
 .eletext {
 	font-weight: bold;

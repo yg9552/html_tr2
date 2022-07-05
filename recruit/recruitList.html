@@ -26,7 +26,7 @@
 				<th>지원서</th>
 				<th style="width: 150px;">제출시간</th>
 			</tr>
-			<tr>
+			<tr id="on" onmouseover="mouseon()" onmouseout="mouseout()">
 				<td><input type="checkbox" name="1"></td>
 				<td>1</td>
 				<td>홍길동</td>
@@ -93,6 +93,12 @@
 	    txt = "You pressed Cancel!";
 	  }
 	  document.getElementById("form3")=txt;
+	}
+	function mouseon() {
+		on.style.color="#9dc4ae";
+	}
+	function mouseout() {
+		on.style.color="black";
 	}
 	</script>
 </body>

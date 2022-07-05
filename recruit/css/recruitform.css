@@ -30,8 +30,9 @@ th {
 }
 input {
 	height: 30px;
-	width: 400px;
+	width: 300px;
 	text-align: center;
+	font-size: 16px;
 }
 /* input[type=date] {
 	border: 1px solid black;

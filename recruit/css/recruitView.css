@@ -58,4 +58,6 @@ input[type=submit], .mod, input[type=reset] {
 	text-decoration: none;
 	display: inline-block;
 } */
-
+.table1 tr td {
+	width: 300px;
+}

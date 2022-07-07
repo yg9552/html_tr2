@@ -9,14 +9,16 @@
 			background-color: aqua;
 			width: 100px;
 			height: 100px;
-			position: absolute;
-			z-index: -1;
+			
 		}
 		#bbb {
 			width: 100px;
 			height: 100px;
 			background-color: green;
-			z-index: 2;
+			
+			position: relative;
+			height: 300px;
+			height: 300px;
 		}
 		#ccc {
 			width: 150px;
@@ -26,11 +28,21 @@
 			top: 50px;
 			left: 50px;
 		}
+		#ddd {
+			width: 300px;
+			height: 300px;
+			background-color: fuchsia;
+			position: absolute;
+			top: 100px;
+			left: 100px;
+		}
 	</style>
 </head>
 <body>
-	<div id="aaa">Box1</div>
-	<div id="bbb">Box2</div>
-	<div id="ccc">Box3</div>
+	<div id="ddd">
+		<div id="aaa">Box1</div>
+		<div id="bbb">Box2</div>
+		<div id="ccc">Box3</div>
+	</div>
 </body>
 </html>

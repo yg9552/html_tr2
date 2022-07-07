@@ -5,10 +5,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
 	<style type="text/css">
-	
+		#aaa {
+			background-color: aqua;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			z-index: -1;
+		}
+		#bbb {
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			z-index: 2;
+		}
+		#ccc {
+			width: 150px;
+			height: 100px;
+			background-color: purple;
+			position: relative;
+			top: 50px;
+			left: 50px;
+		}
 	</style>
 </head>
 <body>
-
+	<div id="aaa">Box1</div>
+	<div id="bbb">Box2</div>
+	<div id="ccc">Box3</div>
 </body>
 </html>

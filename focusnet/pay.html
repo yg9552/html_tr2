@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/pay.css">
+	<title>포커스넷</title>
+</head>
+<body>
+	<form action="#" autocomplete="off">
+		<main>
+			<h2>주문결제</h2>
+			<table>
+				<tr>
+					<th>상품명/옵션</th>
+					<th>수량</th>
+					<th>상품금액</th>
+					<th>할인금액</th>
+					<th>총합계</th>
+					<th>배송비</th>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<h3>구매자 정보</h3>
+			<hr>
+			<table>
+				<tr>
+					<th><label for="name">이름<sup>*</sup></label></th>
+					<td><input type="text" name="name" id="name"></td>
+				</tr>
+				<tr>
+					<th><label for="email">E-mail<sup>*</sup></label></th>
+					<td><input type="text" name="email" id="email"></td>
+				</tr>
+				<tr>
+					<th><label for="phone">휴대폰 번호<sup>*</sup></label></th>
+					<td>
+						<input type="text" name="phone" id="phone">
+						<span>*숫자만 입력하십시오</span>
+					</td>
+				</tr>
+				<tr>
+					<th><label for="tel">전화번호</label></th>
+					<td>
+						<input type="text" name="tel" id="tel">
+						<span>*숫자만 입력하십시오</span>
+					</td>
+				</tr>
+			</table>
+			
+			<h3>배송지정보</h3>
+			<hr>
+			<table>
+				<tr>
+					<th>배송지선택</th>
+					<td><input type="radio" name="direct" id="direct"><label for="direct">직접입력</label></td>
+				</tr>
+				<tr>
+					<th><label for="name2">이름<sup>*</sup></label></th>
+					<td><input type="text" name="name2" id="name2"></td>
+				</tr>
+				<tr>
+					<th>우편번호<sup>*</sup></th>
+					<td>
+						<input type="text" name="postcode" id="postcode">
+						<input type="button" value="주소찾기">
+					</td>
+				</tr>
+				<tr>
+					<th><label for="name2">주소<sup>*</sup></label></th>
+					<td>
+						<input type="text" name="addres" placeholder="주소"><br>
+						<input type="text" name="detailaddres" placeholder="상세주소">
+					</td>
+				</tr>
+				<tr>
+					<th><label for="phone2">휴대폰 번호<sup>*</sup></label></th>
+					<td>
+						<input type="text" name="phone2" id="phone2">
+						<span>*숫자만 입력하십시오</span>
+					</td>
+				</tr>
+				<tr>
+					<th><label for="tel2">전화번호</label></th>
+					<td>
+						<input type="text" name="tel2" id="tel2">
+						<span>*숫자만 입력하십시오</span>
+					</td>
+				</tr>
+			</table>
+		</main>
+	</form>
+
+</body>
+</html>

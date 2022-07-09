@@ -6,12 +6,27 @@
 	<link rel="stylesheet" href="./css/pay.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<title>포커스넷</title>
+	<Style>
+		table ,td, th {
+			border: 1px solid black;
+			padding: 20px;
+		}
+		table {
+			width: 50%;
+		}
+		.table1 {
+			width: 100%;
+		}
+		th {
+			background-color: #f5f5f5;
+		}
+	</Style>
 </head>
 <body>
 	<form action="#" autocomplete="off">
 		<main>
 			<h2>주문결제</h2>
-			<table>
+			<table class="table1">
 				<tr>
 					<th>상품명/옵션</th>
 					<th>수량</th>
@@ -71,7 +86,7 @@
 					<th>우편번호<sup>*</sup></th>
 					<td>
 						<input type="text" name="postcode" id="postcode">
-						<input type="button" value="주소찾기">
+						<a class="btn btn-dark btn-sm" href="#" role="button">주소찾기</a>
 					</td>
 				</tr>
 				<tr>
@@ -109,16 +124,55 @@
 			<hr>
 			<table>
 				<tr>
-					<td><input type="radio" name="norpay">일반결제</td>
+					<td>
+						<div class="form-check">
+  							<input class="form-check-input" type="checkbox" value="" id="norpay">
+  							<label class="form-check-label" for="norpay">일반결제</label>
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<th>결제방법</th>
 					<td>
-						
+						<div class="d-grid gap-4 d-md-block">
+							<button class="btn btn-outline-dark" type="button" data-bs-toggle="button">신용카드결제</button>
+							<button class="btn btn-outline-dark" type="button" data-bs-toggle="button">가상계좌이체</button>
+							<button class="btn btn-outline-dark" type="button" data-bs-toggle="button">실시간계좌이체</button>
+							<button class="btn btn-outline-dark" type="button" data-bs-toggle="button">휴대폰결제</button>
+						</div>
 					</td>
 				</tr>
 			</table>
 		</main>
+		<aside>
+			<div class="card" style="width: 18rem;">
+				<div class="card-header"><h3>최종결제금액</h3></div>
+				<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        주문금액
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+  				<ul class="list-group list-group-flush">
+    				<li class="list-group-item">An item</li>
+    				<li class="list-group-item">An item</li>
+    				<li class="list-group-item">A second item</li>
+    				<li class="list-group-item">A third item</li>
+  				</ul>
+  				<div class="card-body">
+    				<a href="#" class="card-link">Card link</a>
+    				<a href="#" class="card-link">Another link</a>
+  				</div>
+			</div>
+		</aside>
 	</form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

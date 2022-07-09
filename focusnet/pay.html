@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/pay.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	
 	<title>포커스넷</title>
 	<Style>
 		table ,td, th {
@@ -85,15 +86,15 @@
 				<tr>
 					<th>우편번호<sup>*</sup></th>
 					<td>
-						<input type="text" name="postcode" id="postcode">
-						<a class="btn btn-dark btn-sm" href="#" role="button">주소찾기</a>
+						<input type="text" name="zip">
+						<button type="button" class="btn btn-dark btn-sm" onclick="openZipSearch()">주소찾기</button>
 					</td>
 				</tr>
 				<tr>
 					<th><label for="name2">주소<sup>*</sup></label></th>
 					<td>
-						<input type="text" name="addres" placeholder="주소"><br>
-						<input type="text" name="detailaddres" placeholder="상세주소">
+						<input type="text" name="addr1" placeholder="주소"><br>
+						<input type="text" name="addr2" placeholder="상세주소">
 					</td>
 				</tr>
 				<tr>
@@ -174,6 +175,18 @@
 			</div>
 		</aside>
 	</form>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script>
+	function openZipSearch() {
+	new daum.Postcode({
+		oncomplete: function(data) {
+			$('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
+			$('[name=addr1]').val(data.address);
+			$('[name=addr2]').val(data.buildingName);
+		}
+	}).open();
+}
+</script>
 </body>
 </html>

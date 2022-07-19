@@ -1,69 +1,428 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주소 api 사용법</title>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Main</title>
+	<script src="https://kit.fontawesome.com/144448c071.js" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-<input type="text" id="sample6_postcode" placeholder="우편번호">
-<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" id="sample6_address" placeholder="주소"><br>
-<input type="text" id="sample6_detailAddress" placeholder="상세주소">
-<input type="text" id="sample6_extraAddress" placeholder="참고항목">
 
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-    function sample6_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+<nav class="navbar navbar-expand-lg mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="./image/lgo.png" alt="" width="210" height="80" class="d-inline-block align-text-top"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><i class="fa-solid fa-user-gear"></i> 관리자</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">로그아웃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">마이페이지</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-folder-tree"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <li><a class="dropdown-item" href="#">회원관리</a></li>
+              <li><a class="dropdown-item" href="#">코드관리</a></li>
+              <li><a class="dropdown-item" href="#">코드그룹관리</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
 
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
+<div class="container">
+	<nav>
+	  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+	    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fa-solid fa-list"></i> 회원관리</button>
+	    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fa-solid fa-code"></i> 코드관리</button>
+	    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="fa-solid fa-code-fork"></i> 코드그룹관리</button>
+	    <!-- <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button> -->
+	  </div>
+	</nav>
+	<div class="tab-content" id="nav-tabContent">
+	  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+		<table class="table table-bordered border-dark table-hover text-center">
+		  <thead class="table-bordered border-dark text-white bg-gradient" style="background-color: #4595d6">
+		    <tr>
+		      <th scope="col">
+		      		<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+		      </th>
+		      <th scope="col">이름</th>
+		      <th scope="col">나이</th>
+		      <th scope="col">연락처</th>
+		      <th scope="col">이메일</th>
+		      <th scope="col">생년월일</th>
+		      <th scope="col">가입일</th>
+		      <th scope="col">등급</th>
+		    </tr>
+		  </thead>
+		  <tbody class="table-warning table-bordered border-dark">
+		    <tr>
+		    	<th scope="row">
+		      		<div>
+		  				<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+					</div>
+				</th>
+		      <td>홍길동</td>
+		      <td>19</td>
+		      <td>010-1111-2222</td>
+		      <td>abcdef@naver.com</td>
+		      <td>2003.01.01</td>
+		      <td>2022.07.14</td>
+		      <td>Silver</td>
+		    </tr>
+		    <tr>
+		    	<th scope="row">
+			      	<div>
+			  			<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+					</div>
+				</th>
+		      <td>송강호</td>
+		      <td>56</td>
+		      <td>010-2222-3333</td>
+		      <td>fedca@kakao.com</td>
+		      <td>1967.01.17</td>
+		      <td>2022.01.01</td>
+		      <td>VIP</td>
+		    </tr>
+		    <tr>
+		    	<th scope="row">
+			      	<div>
+			  			<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+					</div>
+				</th>
+		      <td>이병헌</td>
+		      <td>53</td>
+		      <td>010-3333-4444</td>
+		      <td>qweazc@google.com</td>
+		      <td>1970.07.12</td>
+		      <td>2022.01.02</td>
+		      <td>Gold</td>
+		    </tr>
+		    <tr>
+		    	<th scope="row">
+			      	<div>
+			  			<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+					</div>
+				</th>
+		      <td>전도연</td>
+		      <td>50</td>
+		      <td>010-4444-5555</td>
+		      <td>wjsehd@naver.com</td>
+		      <td>1973.02.11</td>
+		      <td>2022.01.03</td>
+		      <td>Gold</td>
+		    </tr>
+		    <tr>
+		    	<th scope="row">
+			      	<div>
+			  			<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+					</div>
+				</th>
+		      <td>김남길</td>
+		      <td>43</td>
+		      <td>010-3333-4444</td>
+		      <td>skarlf@kakao.com</td>
+		      <td>1980.03.13</td>
+		      <td>2022.02.01</td>
+		      <td>Gold</td>
+		    </tr>
+		    <tr>
+		    	<th scope="row">
+			      	<div>
+			  			<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+					</div>
+				</th>
+		      <td>임시완</td>
+		      <td>34</td>
+		      <td>010-3333-4444</td>
+		      <td>dlatl@naver.com</td>
+		      <td>1988.12.01</td>
+		      <td>2022.03.02</td>
+		      <td>Silver</td>
+		    </tr>
+		  </tbody>
+	</table>
+	
+	<nav aria-label="Page navigation example">
+	  <ul class="pagination pagination-sm justify-content-center">
+	  	<li class="page-item">
+	      <a class="page-link" href="#" aria-label="Previous">
+	        <span aria-hidden="true"><i class="fa-solid fa-angles-left"></i></span>
+	      </a>
+	    </li>
+	    <li class="page-item">
+	      <a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></i></a>
+	    </li>
+	    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+	    <li class="page-item"><a class="page-link" href="#">2</a></li>
+	    <li class="page-item"><a class="page-link" href="#">3</a></li>
+	    <li class="page-item">
+	      <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
+	    </li>
+	    <li class="page-item">
+	      <a class="page-link" href="#" aria-label="Next">
+	        <span aria-hidden="true"><i class="fa-solid fa-angles-right"></i></span>
+	      </a>
+	    </li>
+	  </ul>
+	</nav>
+	</div>
+	  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+	  	<nav aria-label="Page navigation example">
+		  <ul class="pagination pagination-sm justify-content-center">
+		  	<li class="page-item">
+		      <a class="page-link" href="#" aria-label="Previous">
+		        <span aria-hidden="true"><i class="fa-solid fa-angles-left"></i></span>
+		      </a>
+		    </li>
+		    <li class="page-item">
+		      <a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></i></a>
+		    </li>
+		    <li class="page-item"><a class="page-link" href="#">1</a></li>
+		    <li class="page-item"><a class="page-link" href="#">2</a></li>
+		    <li class="page-item"><a class="page-link" href="#">3</a></li>
+		    <li class="page-item">
+		      <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
+		    </li>
+		    <li class="page-item">
+		      <a class="page-link" href="#" aria-label="Next">
+		        <span aria-hidden="true"><i class="fa-solid fa-angles-right"></i></span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
+	  </div>
+	  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+	  	<nav aria-label="Page navigation example">
+		  <ul class="pagination pagination-sm justify-content-center">
+		  	<li class="page-item">
+		      <a class="page-link" href="#" aria-label="Previous">
+		        <span aria-hidden="true"><i class="fa-solid fa-angles-left"></i></span>
+		      </a>
+		    </li>
+		    <li class="page-item">
+		      <a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></i></a>
+		    </li>
+		    <li class="page-item"><a class="page-link" href="#">1</a></li>
+		    <li class="page-item"><a class="page-link" href="#">2</a></li>
+		    <li class="page-item"><a class="page-link" href="#">3</a></li>
+		    <li class="page-item">
+		      <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
+		    </li>
+		    <li class="page-item">
+		      <a class="page-link" href="#" aria-label="Next">
+		        <span aria-hidden="true"><i class="fa-solid fa-angles-right"></i></span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
+	  </div>
+	<!--   
+	  <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+	  ...
+	  </div>
+	   -->
+	</div>
+</div>
 
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
+<!-- 
+<nav aria-label="Page navigation example">
+  <ul class="pagination pagination-sm justify-content-center">
+  	<li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true"><i class="fa-solid fa-angles-left"></i></span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></i></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true"><i class="fa-solid fa-angles-right"></i></span>
+      </a>
+    </li>
+  </ul>
+</nav>
+ -->
+<div class="container">
+	<div class="row m-3">
+		<div class="col">
+			<div class="dropdown">
+	  			<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">검색 <i class="fa-solid fa-magnifying-glass"></i></button>
+	  			<form class="dropdown-menu">
+	    			<div class="row g-2">
+						<div class="col-2">
+							<select class="form-select" aria-label="Default select example">
+					  			<option selected>삭제여부</option>
+					  			<option value="1">Y</option>
+					  			<option value="2">N</option>
+							</select>
+						</div>
+	  					<div class="col-5">
+	    					<input type="text" class="form-control" placeholder="이름" aria-label="First name">
+						</div>
+	  					<div class="col-5">
+	    					<input type="text" class="form-control" placeholder="생년월일" aria-label="Last name">
+	  					</div>
+	  					<div class="col-4">
+	    					<input type="text" class="form-control" placeholder="연락처" aria-label="Last name">
+	  					</div>
+	  					<div class="col-2">
+	    					<input type="text" class="form-control" placeholder="나이" aria-label="Last name">
+	  					</div>
+	  					<div class="col-2">
+	  						<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="등급">
+							<datalist id="datalistOptions">
+							  <option value="Silver">
+							  <option value="Gold">
+							  <option value="VIP">
+							</datalist>		
+	  					</div>
+	  					<div class="col">
+						    <input class="btn btn-dark" type="button" value="검색">
+						    <input class="btn btn-danger" type="reset" value="초기화">
+	  					</div>
+					</div>
+	  			</form>
+			</div>
+		</div>
+		<div class="col-auto">
+			<a class="btn btn-success" href="./memberRegForm.html" role="button">등록 <i class="fa-solid fa-pencil"></i></a>
+			<!-- <a class="btn btn-danger" href="#" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">삭제 <i class="fa-solid fa-trash-can"></i></a> -->
+			<a class="btn btn-danger" href="#exampleModalToggle" role="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">삭제 <i class="fa-solid fa-trash-can"></i></a>
+			
+			<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+			  <div class="modal-dialog modal-dialog-centered modal-sm">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalToggleLabel"><i class="fa-solid fa-trash-can"></i></h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body text-center">
+			        삭제하시겠습니까?
+			      </div>
+			      <div class="modal-footer">
+			        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">삭제</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+			  <div class="modal-dialog modal-dialog-centered modal-sm">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalToggleLabel2"><i class="fa-solid fa-trash-can"></i></h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body text-center">
+			        응 안돼~
+			      </div>
+			      <div class="modal-footer">
+			        <button class="btn btn-dark" data-bs-dismiss="modal" aria-label="Close">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			
+			<!-- 
+			<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-sm">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="staticBackdropLabel"><i class="fa-solid fa-trash-can"></i></h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body text-center">
+			        삭제하시겠습니까?
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-danger">삭제</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			 -->
+			<a class="btn btn-warning" href="#" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1"><i class="fa-solid fa-power-off"></i></a>
+			<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="staticBackdropLabel1">빙글빙글</h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body text-center">
+			        <div class="spinner-border text-primary" role="status">
+					  <span class="visually-hidden">Loading...</span>
+					</div>
+					<div class="spinner-border text-secondary" role="status">
+					  <span class="visually-hidden">Loading...</span>
+					</div>
+					<div class="spinner-border text-success" role="status">
+					  <span class="visually-hidden">Loading...</span>
+					</div>
+					<div class="spinner-border text-danger" role="status">
+					  <span class="visually-hidden">Loading...</span>
+					</div>
+					<div class="spinner-border text-warning" role="status">
+					  <span class="visually-hidden">Loading...</span>
+					</div>
+					<div class="spinner-border text-info" role="status">
+					  <span class="visually-hidden">Loading...</span>
+					</div>
+					<div class="spinner-border text-light" role="status">
+					  <span class="visually-hidden">Loading...</span>
+					</div>
+					<div class="spinner-border text-dark" role="status">
+					  <span class="visually-hidden">Loading...</span>
+					</div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			        <button class="btn btn-primary" type="button" disabled>
+					  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+					  Loading...
+					</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script type="text/javascript">
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
 
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("sample6_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
-            }
-        }).open();
-    }
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
 </script>
 </body>
 </html>

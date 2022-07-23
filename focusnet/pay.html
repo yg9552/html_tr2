@@ -44,24 +44,20 @@
 	<form action="#" autocomplete="off">
 		<main class="mb-5">
 			<h2>주문결제</h2>
-			<table class="table table-bordered border-dark table1">
-				<tr>
-					<th>상품명/옵션</th>
-					<th>수량</th>
-					<th>상품금액</th>
-					<th>할인금액</th>
-					<th>총합계</th>
-					<th>배송비</th>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table>
+			<div class="row text-center border">
+				<div class="col-6 border p-2">상품명/옵션</div>
+				<div class="col-1 border p-2">수량</div>
+				<div class="col-1 border p-2">상품금액</div>
+				<div class="col-1 border p-2">할인금액</div>
+				<div class="col-1 border p-2">배송비</div>
+				<div class="col-2 border p-2">총합계</div>
+				<div class="col-6 border p-5"></div>
+				<div class="col-1 border p-5"></div>
+				<div class="col-1 border p-5"></div>
+				<div class="col-1 border p-5"></div>
+				<div class="col-1 border p-5"></div>
+				<div class="col-2 border p-5"></div>
+			</div>
 		</main>
 		<h3>구매자 정보</h3>
 		<div class="row g-5">
@@ -133,8 +129,7 @@
 				<tr>
 					<th>배송요청사항</th>
 					<td>
-						<div class="mb-3">
-						  <label for="exampleFormControlTextarea1" class="form-label"></label>
+						<div>
 						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 						</div>
 					</td>

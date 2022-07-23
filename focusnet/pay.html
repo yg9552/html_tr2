@@ -133,9 +133,10 @@
 				<tr>
 					<th>배송요청사항</th>
 					<td>
-						<span>상품명</span><br>
-						<span></span>
-						<textarea rows="10" cols="50"></textarea>
+						<div class="mb-3">
+						  <label for="exampleFormControlTextarea1" class="form-label"></label>
+						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+						</div>
 					</td>
 				</tr>
 			</table>
@@ -144,12 +145,14 @@
 			<hr>
 			<table class="table table-bordered">
 				<tr>
-					<td style="border-right: none;">
+					<th colspan="2">
 						<div class="form-check">
-  							<input class="form-check-input" type="checkbox" value="" id="norpay">
-  							<label class="form-check-label" for="norpay">일반결제</label>
+						  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+						  <label class="form-check-label" for="flexCheckDefault">
+						    일반결제
+						  </label>
 						</div>
-					</td>
+					</th>
 				</tr>
 				<tr>
 					<th>결제방법</th>
